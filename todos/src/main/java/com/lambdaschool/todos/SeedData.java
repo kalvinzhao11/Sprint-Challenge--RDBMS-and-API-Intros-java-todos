@@ -2,6 +2,7 @@ package com.lambdaschool.todos;
 
 import com.lambdaschool.todos.models.Todos;
 import com.lambdaschool.todos.models.User;
+import com.lambdaschool.todos.services.TodosService;
 import com.lambdaschool.todos.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,6 +25,9 @@ public class SeedData implements CommandLineRunner
     @Autowired
     UserService userService;
 
+    @Autowired
+    TodosService todosService;
+
     /**
      * Generates test, seed data for our application
      * First a set of known data is seeded into our database.
@@ -37,6 +41,9 @@ public class SeedData implements CommandLineRunner
     @Override
     public void run(String[] args) throws Exception
     {
+//        Todos t1 = new Todos("Go to Sleep");
+//        todosService.save(t1);
+
         User u1 = new User("admin",
                            "password",
                            "admin@lambdaschool.local");

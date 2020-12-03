@@ -32,6 +32,7 @@ public class TodosController
     @PatchMapping(value = "/todo/{todoid}")
     public ResponseEntity<?> completeTodo(@PathVariable long todoid)
     {
+        System.out.println(todoid);
         todosService.markComplete(todoid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
